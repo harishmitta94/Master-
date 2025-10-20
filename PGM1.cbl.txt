@@ -1,0 +1,18 @@
+=COLS> ----+----1----+----2----+----3----+----4----+----5----+----6----+----7--
+****** ***************************** Top of Data ******************************
+000001        IDENTIFICATION DIVISION.                                         
+000002        PROGRAM-ID. B14PGM1.                                             
+000003        AUTHOR. VENKAT SINCE2010 +91-7997745085.                         
+000004        DATA DIVISION.                                                   
+000005        WORKING-STORAGE SECTION.                                         
+000006        01 WS-DATA.                                                      
+000007          05 WS-STMT    PIC X(40) VALUE 'WELCOME TO CICS PROGRAM!!!'.    
+000008        PROCEDURE DIVISION.                                              
+000009              PERFORM 1000-SEND-PARA.                                    
+000010              EXEC CICS RETURN END-EXEC.                                 
+000011        1000-SEND-PARA.                                                  
+000012              EXEC CICS SEND                                             
+000013                   FROM(WS-STMT)                                         
+000014                   LENGTH(-6)                                            
+000015                   ERASE                                                 
+000016              END-EXEC.                                                  
